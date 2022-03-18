@@ -1,8 +1,8 @@
 (function () {
-  const rows = document.querySelectorAll('table > tbody > tr')
+  const rows = document.querySelectorAll('table > tbody > tr');
 
   const obj = Array.from(rows)
-    .reduce((result, current, index, array) => {
+    .reduce((result, _, index, _) => {
       const year = document.querySelector(`table > tbody > tr:nth-of-type(${index + 1}) > td:nth-of-type(1)`).textContent.trim();
       const pristineValue = document.querySelector(`table > tbody > tr:nth-of-type(${index + 1}) > td:nth-of-type(3)`).textContent;
       const value = parseFloat(pristineValue.substring(1, pristineValue.length - 1));
